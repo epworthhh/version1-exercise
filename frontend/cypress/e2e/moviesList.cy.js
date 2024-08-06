@@ -1,4 +1,5 @@
 /* global cy */
+
 describe('App', () => {
   it('fetches movie data and displays it correctly', () => {
     cy.intercept('GET', '/api/getMovies', { fixture: 'movies.json' }
