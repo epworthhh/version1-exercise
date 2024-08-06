@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import MovieLink from './components/MovieLink/MovieLink';
 import './App.css';
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
 
   return (
     <div className="container">
-      <h1>Movie List</h1>
+      <h1>Movies List</h1>
       <div className="movies">
         {movies.map((movie) => (
           <div key={movie.id} className="movies__item">
@@ -22,12 +23,12 @@ function App() {
               <h3>{movie.title}</h3>
               <div className="movies__block">
                 <span className="movies__director">Director</span>
-                <a href={movie.directorLink} className="movies__link" target="blank">{movie.director}</a>
+                <MovieLink url={movie.directorLink} text={movie.director} />
               </div>
               <div className="movies__stars">
                 <span>⭐ {movie.stars}</span>
               </div>
-              <a href={movie.imdbLink} className="movies__link" target="blank">{'+ info'}</a>
+              <MovieLink url={movie.imdbLink} text={'+ info'} />
             </div>
           </div>
         ))}
