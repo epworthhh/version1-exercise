@@ -6,6 +6,7 @@ import './App.css';
 function App() {
   const [movies, setMovies] = useState([]);
   const [searchValue, setSearchValue] = useState('');
+  const [hasSearched, setHasSearched] = useState(false);
 
   useEffect(() => {
     fetch('/api/getMovies')
@@ -16,6 +17,10 @@ function App() {
 
   const handleSearchChange = (event) => {
     setSearchValue(event.target.value);
+
+    if (!hasSearched) {
+      setHasSearched(true);
+    }
   };
 
   const filteredMovies = searchValue.length > 2 
@@ -48,7 +53,7 @@ function App() {
             </div>
           </div>
         ))}
-        {filteredMovies.length === 0 && <p>No movies found.</p>}
+        {hasSearched && filteredMovies.length === 0 && <p>No movies found.</p>}
       </div>
     </div>
   );
