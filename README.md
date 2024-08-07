@@ -53,6 +53,14 @@ The frontend application should now be running on `http://localhost:3000`.
 
 ### e2e tests
 
-```sh
-npx cypress open
-```
+1. Navigate to the `frontend` directory:
+
+   ```sh
+   cd frontend
+   ```
+
+2. Run tests:
+
+   ```sh
+   npx cypress open
+   ```
