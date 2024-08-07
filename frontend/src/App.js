@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from 'react';
-import MovieLink from './components/MovieLink/MovieLink';
 import FilterInput from './components/FilterInput/FilterInput';
 import { ThemeContext } from './hooks/ThemeContext';
+import MovieCard from './components/MovieCard/MovieCard';
 import './App.css';
 
 function App() {
@@ -45,20 +45,7 @@ function App() {
         />
         <div className="movies">
           {filteredMovies.map((movie) => (
-            <div key={movie.id} className="movies__item">
-              <img src={movie.cover} alt={movie.title} className="movies__image" />
-              <div className="movies__content">
-                <h3>{movie.title}</h3>
-                <div className="movies__block">
-                  <span className="movies__director">Director</span>
-                  <MovieLink url={movie.directorLink} text={movie.director} />
-                </div>
-                <div className="movies__stars">
-                  <span>⭐ {movie.stars}</span>
-                </div>
-                <MovieLink url={movie.imdbLink} text={'+ info'} />
-              </div>
-            </div>
+            <MovieCard key={movie.id} movie={movie} />
           ))}
           {hasSearched && filteredMovies.length === 0 && <p>No movies found.</p>}
         </div>

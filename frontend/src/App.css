@@ -22,37 +22,6 @@
   justify-content: center;
 }
 
-.movies__item {
-  flex: 0 1 250px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.movies__image {
-  width: 100%;
-  object-fit: cover;
-}
-
-.movies__content {
-  padding: 14px;
-}
-
-.movies__content h3 {
-  margin-top: 0;
-}
-
-.movies__block {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 16px;
-}
-
-.movies__stars {
-  margin-bottom: 10px;
-}
-
 .movies__director {
   font-weight: bold;
 }
